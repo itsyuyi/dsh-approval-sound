@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Approval Sound",
+    "description": "Plays the system notification sound when a session has a pending approval or user-question prompt."
+  }
+}

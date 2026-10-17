@@ -1,0 +1,67 @@
+{
+  "name": "@itsyuyi/dsh-approval-sound",
+  "version": "1.0.0",
+  "description": "DeepSeek Harness plugin: plays the system notification sound whenever a session has a pending approval or user-question prompt, with a live settings page (Settings → Plugins → Approval Sound).",
+  "license": "MIT",
+  "author": "itsyuyi <itsyuyi@126.com>",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "icon": "./icon.svg",
+  "meta": {
+    "title": "Approval Sound",
+    "description": "Plays the system notification sound for pending approval or user-question prompts."
+  },
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "approval",
+    "notification",
+    "sound"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.0 <5",
+    "react": ">=18.2.0 <19"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsyuyi/dsh-approval-sound.git"
+  },
+  "homepage": "https://github.com/itsyuyi/dsh-approval-sound#readme",
+  "bugs": {
+    "url": "https://github.com/itsyuyi/dsh-approval-sound/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings-plugins"
+      ]
+    }
+  }
+}
